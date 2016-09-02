@@ -22,7 +22,7 @@ public class CheapModel implements ICheapModel {
         mCall.enqueue(new Callback<NewsTextBean>() {
             @Override
             public void onResponse(Call<NewsTextBean> call, Response<NewsTextBean> response) {
-                NewsTextBean newsTextBean =  response.body();
+                NewsTextBean newsTextBean = response.body();
                 listener.onSuccess(newsTextBean);
             }
 

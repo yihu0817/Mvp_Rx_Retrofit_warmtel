@@ -33,6 +33,9 @@ public class CheapPresenter extends BasePresenter<ICheapView> implements ICheapP
         mCheapModel.setListAndAdsData(new CallbackListener<NewsTextBean>() {
             @Override
             public void onSuccess(NewsTextBean data) {
+                if(data == null){
+                    return;
+                }
                 List<NewsTextItemBean> newsTextItemBeanList = data.getT1348647909107();
                 mReadNewsAdapter.addDatas(0,newsTextItemBeanList);
                 List<AdsBean> adsLists = newsTextItemBeanList.get(0).getAds();
